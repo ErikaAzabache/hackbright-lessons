@@ -22,20 +22,22 @@ while True:
                 except:
                     print("ValueError: That is not a number!")
             if token[0] is '+':
-                print(reduce(add, token[1:]))
+                print(my_reduce(add, token[1:]))
             elif token[0] is '-':
-                print(reduce(subtract, token[1:]))
+                print(my_reduce(subtract, token[1:]))
             elif token[0] is '*':
-                print(multiply(token[1:]))
+                print(my_reduce(multiply, token[1:]))
             elif token[0] is '/':
-                print(divide(token[1:]))
+                print(my_reduce(divide, token[1:]))
             elif token[0] == 'square':
-                print(square(token[1:]))
+                for num in token[1:]:
+                    print(square(num))
             elif token[0] == 'cube':
-                print(cube(token[1:]))
+                for num in token[1:]:
+                    print(cube(num))
             elif token[0] == 'power':
-                print(power(token[1:]))
+                print(my_reduce(power, token[1:]))
             elif token[0] == 'mod':
-                print(mod(token[1:]))
+                print(my_reduce(mod, token[1:]))
         else:
             print("I don't understand.")

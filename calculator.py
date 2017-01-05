@@ -24,18 +24,18 @@ while True:
             if token[0] is '+':
                 print(add(token[1:]))
             elif token[0] is '-':
-                print(subtract(token[1], token[2]))
+                print(subtract(token[1:]))
             elif token[0] is '*':
-                print(multiply(token[1], token[2]))
+                print(multiply(token[1:]))
             elif token[0] is '/':
-                print(divide(token[1], token[2]))
+                print(divide(token[1:]))
             elif token[0] == 'square':
-                print(square(token[1], token[2]))
+                print(square(token[1:]))
             elif token[0] == 'cube':
-                print(cube(token[1], token[2]))
+                print(cube(token[1:]))
             elif token[0] == 'power':
-                print(power(token[1], token[2]))
+                print(power(token[1:]))
             elif token[0] == 'mod':
-                print(mod(token[1], token[2]))
+                print(mod(token[1:]))
         else:
             print("I don't understand.")

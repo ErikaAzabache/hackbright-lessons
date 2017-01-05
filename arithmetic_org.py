@@ -61,4 +61,4 @@ def my_reduce(function, tokens):
             res = mod(res, num)
     else:
         print "I don't know this function"
-    return res
+    return "{0:.4f}".format(res)

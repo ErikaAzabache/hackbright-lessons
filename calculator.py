@@ -18,7 +18,7 @@ while True:
         if len(token) > 1:
             for item in range(1, len(token)):
                 try:
-                    token[item] = int(token[item])
+                    token[item] = float(token[item])
                 except:
                     print("ValueError: That is not a number!")
             if token[0] is '+':

@@ -11,10 +11,14 @@ from arithmetic import *
 # Your code goes here
 while True:
     my_input = raw_input(">>> ")
-    token = my_input.split(" ")
-    token[1] = int(token[1])
-    token[2] = int(token[2])
-    if token[0] is 'q':
+    token = my_input.split()
+    if len(token) == 3:
+        try:
+            token[1] = int(token[1])
+            token[2] = int(token[2])
+        except:
+            print("ValueError: That is not a number!")
+    elif token[0] is 'q':
         break
     else:
         if token[0] is '+':

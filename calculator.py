@@ -9,11 +9,10 @@ from arithmetic_org import *
 
 
 # Your code goes here
-while True:
-    my_input = raw_input(">>> ")
-    token = my_input.split()
+def calc(line):
+    token = line.split()
     if token[0] is 'q':
-        break
+        return
     else:
         if len(token) > 1:
             for item in range(1, len(token)):
@@ -31,13 +30,19 @@ while True:
                 print(my_reduce(divide, token[1:]))
             elif token[0] == 'square':
                 for num in token[1:]:
-                    print(square(num))
+                    print("{0:.4f}".format(square(num)))
             elif token[0] == 'cube':
                 for num in token[1:]:
-                    print(cube(num))
+                    print("{0:.4f}".format(cube(num)))
             elif token[0] == 'power':
                 print(my_reduce(power, token[1:]))
             elif token[0] == 'mod':
                 print(my_reduce(mod, token[1:]))
         else:
             print("I don't understand.")
+
+
+my_file = open("testing.txt")
+for line in my_file:
+    calc(line)
+my_file.close()

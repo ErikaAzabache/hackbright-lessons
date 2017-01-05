@@ -5,7 +5,7 @@ Using our arithmetic.py file from Exercise02, create the
 calculator program yourself in this file.
 """
 
-from arithmetic import *
+from arithmetic_org import *
 
 
 # Your code goes here
@@ -22,9 +22,9 @@ while True:
                 except:
                     print("ValueError: That is not a number!")
             if token[0] is '+':
-                print(add(token[1:]))
+                print(reduce(add, token[1:]))
             elif token[0] is '-':
-                print(subtract(token[1:]))
+                print(reduce(subtract, token[1:]))
             elif token[0] is '*':
                 print(multiply(token[1:]))
             elif token[0] is '/':

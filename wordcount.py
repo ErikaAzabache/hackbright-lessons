@@ -1,6 +1,7 @@
 # put your code here.
 
 # import timeit
+import sys
 
 
 def count_words_in_file(file_name):
@@ -20,14 +21,14 @@ def count_words_in_file(file_name):
     return word_count
 
 
-def print_dictionary(dict_name, letter):
+def print_dictionary(dict_name, letter="t"):
     for word, count in sorted(dict_name.items()):
         if word[0] == letter:
             print word, count
 
 
-dictionary_from_file = count_words_in_file('twain.txt')
-print_dictionary(dictionary_from_file, 'y')
+dictionary_from_file = count_words_in_file(sys.argv[1])
+print_dictionary(dictionary_from_file)
 
 # def stopwatch(file_name):
 #     start_time = timeit.default_timer()

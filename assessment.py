@@ -171,7 +171,15 @@ def append_to_list(lst, num):
 #    fees.
 
 def calculate_price(base_price, two_letters_state, tax_decimal = 0.05):
-    valid_abreviations = ["AL", "AK", "AZ", "CA", "CO", "CT"]
+    valid_abreviations = ["AL", "AK", "AZ", "CA", "CO", "CT", "DE", "DC", "FL",
+     "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", 
+     "MI", "MN", "MS", "MO", "MT", "NB", "NV", "NH", "NJ", "NM", "NY", "NC", 
+     "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT",
+     "VA", "WA", "WV", "WI", "WY"]
+
+    if two_letters_state not in valid_abreviations:
+        raise Exception("Invalid State")
+
     extra_fees = 0
 
     if two_letters_state == "CA":
@@ -201,6 +209,14 @@ def calculate_price(base_price, two_letters_state, tax_decimal = 0.05):
 # isn't something we've discussed yet in class; you might need to google how to
 # write a Python function that takes in an arbitrary number of arguments.
 
+def append_args(lst, *args):
+    """Appends a variable number of arguments to a given list.
+    Example:
+    >>> append_args([1, 2, 3], 2, 3, 4)
+    [1, 2, 3, 2, 3, 4]
+    """
+    return lst + list(args)
+
 
 # 2. Make a new function with a nested inner function.
 # The outer function will take in a word.
@@ -213,6 +229,15 @@ def calculate_price(base_price, two_letters_state, tax_decimal = 0.05):
 
 #>>> outer("Balloonicorn")
 #('Balloonicorn', 'BalloonicornBalloonicornBalloonicorn')
+def outer(word):
+    """Takes a word and returns the same word and the word multiplied by 3
+    >>> outer("Balloonicorn")
+    ('Balloonicorn', 'BalloonicornBalloonicornBalloonicorn')
+    """
+    def multiply_by_3(word):
+        return word * 3
+        
+    return (word, multiply_by_3(word))
 
 
 ###############################################################################

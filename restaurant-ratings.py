@@ -20,16 +20,17 @@ restaurant_rating_dict = ratings_dictionary("scores.txt")
 while True:
     print "\nHi! please enter 1 to see all ratings in alphabetical order."
     print "Or, please enter 2 to add a new restaurant and rating it."
-    print "Or, please enter 3 to update a restaurant's rating."
-    print "Or, please enter 4 to quit."
+    print "Or, please enter 3 to update a random restaurant's rating."
+    print "Or, please enter 4 to update a chosen restaurant's rating."
+    print "Or, please enter 5 to quit."
 
     choice = raw_input()
 
     if choice == '1':
         print_ratings(restaurant_rating_dict)
     elif choice == '2':
-        new_restaurant = raw_input("Enter new restaurant:")
-        new_rating = raw_input("Enter rating for new restaurant:")
+        new_restaurant = raw_input("Enter new restaurant: ")
+        new_rating = raw_input("Enter rating for new restaurant: ")
         restaurant_rating_dict[new_restaurant] = new_rating
         print_ratings(restaurant_rating_dict)
     elif choice == '3':
@@ -39,6 +40,11 @@ while True:
         restaurant_rating_dict[random_restaurant] = new_rating
         print_ratings(restaurant_rating_dict)
     elif choice == '4':
+        updated_restaurant = raw_input("Enter the name of the restaurant: ")    
+        new_rating = raw_input("Enter rating for this restaurant: ")
+        restaurant_rating_dict[updated_restaurant] = new_rating
+        print_ratings(restaurant_rating_dict)
+    elif choice == '5':
         sys.exit(0)
     else:
         print "Enter one of the given options, please."

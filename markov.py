@@ -10,14 +10,10 @@ def open_and_read_file(file_path):
     """
 
     # your code goes here
-
     open_file = open(file_path).read()
-    # print type(green_eggs_file)
-
     return open_file
 
-
-def make_chains(text_string, n=2):
+def make_chains(text_string, n):
     """Takes input text as string; returns _dictionary_ of markov chains.
 
     A chain will be a key that consists of a tuple of (word1, word2)
@@ -29,59 +25,42 @@ def make_chains(text_string, n=2):
         >>> make_chains("hi there mary hi there juanita")
         {('hi', 'there'): ['mary', 'juanita'], ('there', 'mary'): ['hi'], ('mary', 'hi': ['there']}
     """
+    words_file = text_string.split()
+    chains_dict = {}
 
-    words = text_string.split()
-    chains = {}
-
-    for i in range(len(words)-n):
-        key = []
+    for i in range(len(words_file) - n):
+        word_n_list = []
         for j in range(n):
-            key = key + [words[j+i]]
-        value = words[i+j+1]
-        ngram = tuple(key)
-        print ngram
-
-    # for i in range(len(words) - int(n)):
-    #     key = []
-    #     for j in range(n):
-    #         key = key + [words[j+i]]
-    #         #key2 = words[i + 1]
-    #     value = words[i + j + 1]
-    #     ngram = tuple(key)
-    #     print ngram
-
-        # if bigram in chains:
-        #     chains[bigram].append(value)
-        # else:
-        #     chains[bigram] = [value]
-        chains[ngram] = chains.get(ngram, []) + [value]
-        # chains[bigram].append(value)
-    #print ngram
-
-    #print chains
-    # return chains
+            word_n_list = word_n_list + [words_file[i + j]]
+        value_list = [words_file[i + n]]
+        key = tuple(word_n_list)
+        chains_dict[key] = chains_dict.get(key, []) + value_list
+    # print chains_dict
+    return chains_dict
 
 
-def make_text(chains):
+def make_text(chains_dict, n):
     """Takes dictionary of markov chains; returns random text."""
 
     # your code goes here
 
     text = ""
-    # first_bigram = choice(chains.keys())
-    # word1 = first_bigram[0]
-    # word2 = first_bigram[1]
-    # word3 = choice(chains[first_bigram])
-    # text = text + "%s %s %s" % (word1, word2, word3)
-    # new_key = (word2, word3)
+    # #pick random key which is a tuple of size n
+    random_key = choice(chains_dict.keys()) #tuple
+    random_value = choice(chains_dict[random_key]) #one word
+    for word in random_key:
+        text = text + ' ' + word + ' '
+        # print text
+    text = text + random_value
+    new_key_list = list(random_key[1:]) + [random_value]
+    new_key = tuple(new_key_list)
+    # print new_key
 
-    # while new_key in chains:
-    #     word1 = new_key[0]
-    #     word2 = new_key[1]
-    #     word3 = choice(chains[new_key])
-    #     text = text + " %s" % (word3)
-    #     new_key = (word2, word3)
-
+    while new_key in chains_dict:
+        random_value = choice(chains_dict[new_key])
+        text = text + ' ' + random_value + ' '
+        new_key_list = list(new_key[1:]) + [random_value]
+        new_key = tuple(new_key_list)
     return text
 
 
@@ -91,9 +70,9 @@ input_path = sys.argv[1]
 input_text = open_and_read_file(input_path)
 
 # Get a Markov chain
-chains = make_chains(input_text)
+chains = make_chains(input_text, int(sys.argv[2]))
 
 # Produce random text
-random_text = make_text(chains)
+random_text = make_text(chains, int(sys.argv[2]))
 
 print random_text

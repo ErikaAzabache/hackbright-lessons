@@ -1,8 +1,10 @@
 """This file should have our order classes in it."""
 from random import randint
+from datetime import datetime
 
 
 class AbstractMelonOrder(object):
+
     def __init__(self, species, qty, order_type, tax):
         """Initialize melon order attributes"""
 
@@ -14,6 +16,9 @@ class AbstractMelonOrder(object):
 
     def get_base_price(self):
         base_price = randint(5, 9)
+        if datetime.today().weekday() < 5 and datetime.now().hour > 8 and datetime.now().hour < 11:
+            base_price = base_price + 4
+
         return base_price
 
     def get_total(self):

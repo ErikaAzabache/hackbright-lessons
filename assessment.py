@@ -195,20 +195,27 @@ def kids_game(names):
     a dictionary (with the super-fast lookup they provide) can help;
     good solutions here will definitely require a dictionary.
     """
-    game_result = [names[0]]
 
-    for name in names[1:]:
-        if name[0] == game_result[-1][-1]:
-            game_result = game_result + [name]
-            break
+    #key: first letters
+    #value: list of words starting with first letter
 
-    return game_result
+    first_letter_lookup = {}
+    for word in names:
+        first_letter_lookup[word[0]] = first_letter_lookup.get(word[0], []) + [word]
 
-
+    current_letter = names[0][0]
+    game_results = []
+    while True:
+        l = first_letter_lookup.get(current_letter, None)
+        if l and len(l) > 0:
+            new_word = l.pop(0)
+            game_results.append(new_word)
+            current_letter = new_word[-1]
+        else:
+            return game_results
 
     # for name in names:
     #     game_result[name] = game_result.get(name, []) + value_list
-    # # print chains_dict
     # return game_result
 
 #####################################################################

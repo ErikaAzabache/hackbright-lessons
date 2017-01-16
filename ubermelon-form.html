@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Ubermelon Order Form </title>
+    </head>
+    <body>
+        <h1> Order! </h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Prices</th>
+                </tr>
+                <tr>
+                    <td>Melon Name</td>
+                    <td>Price per lb.</td>
+                </tr> 
+            </thead> 
+            <tbody>
+                <tr>
+                    <td>Watermelon</td>
+                    <td>&dollar;1.59</td>
+                </tr>
+                <tr>
+                    <td>Honeydew</td>
+                    <td>&dollar;0.99</td>
+                </tr>
+                <tr>
+                    <td>Canteloupe</td>
+                    <td>&dollar;1.29</td>
+                </tr>
+                <tr>
+                    <td>Crenshaw</td>
+                    <td>&dollar;2.19</td>
+                </tr>
+                <tr>
+                    <td>Canary</td>
+                    <td>&dollar;11.99</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Place your orders here! You know you want to.</p>
+        <form action="https://ubermelon-order-form.herokuapp.com/process" method="get">
+        First Name: <input type="text" name="firstname"><br><br>
+        Last Name: <input type="text" name="lastname"><br><br>
+        Melon Type: <select name="melontype"><br><br>
+                        <option value="watermelon">Watermelon</option> 
+                        <option value="honeydew">Honeydew</option> 
+                        <option value="canteloupe">Canteloupe</option>
+                        <option value="canary">Canary</option>
+                    </select><br><br>
+        Quantity&ast;: <input type="text" name="quantity" required><br><br>
+        Delivery Time
+        </form>
+    </body>
+</html>

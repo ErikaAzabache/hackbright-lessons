@@ -8,7 +8,7 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 AWESOMENESS = [
-    'awesome', 'terrific', 'fantastic', 'neato', 'fantabulous', 'wowza', 'oh-so-not-meh',
+    'awesome', 'terrific', 'fantastic', 'neato', 'acceptable', 'not-the-worst', 'oh-so-not-meh',
     'brilliant', 'ducky', 'coolio', 'incredible', 'wonderful', 'smashing', 'lovely']
 
 
@@ -55,7 +55,9 @@ def show_madlib():
     adjective = request.args.get("adjective")
     food = request.args.getlist("food")
 
-    return render_template("madlib.html",
+    madlib_list = ["madlib.html", "madlib1.html", "madlib2.html"]
+    
+    return render_template(choice(madlib_list),
                             name=name,
                             color=color,
                             noun=noun,

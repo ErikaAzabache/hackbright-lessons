@@ -1,0 +1,17 @@
+h1{
+    font-family: sans-serif;
+    background-color: #ffb6c1
+}
+
+p{
+    font-family: cursive;
+    text-align: center;
+    font-style: italic;
+    color: #00F
+}
+p.goodbye{
+    font-family: "Times New Roman";
+    font-style: bold;
+    color: #F00;
+    background-color: yellow
+}

@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+<link rel="stylesheet" href="./static/madlibs.css">
+<body>
+    <p>
+    Once upon a time, there where three {{ adjective }} pigs. One day their mother said, "{{ name }}, you need to find a {{ noun }} of your own." Little {{ name }} left home in search for {{ noun }} and found tasty {{ color }} 
+    {% for tasty in food %} 
+    {{ tasty }} 
+    {% endfor %}. {{ name }} never found {{ noun }}, but had a very full and happy stomach.<br>
+    THE END
+    </p>
+
+</body>
+</html>

@@ -42,11 +42,22 @@ def greet_person():
 def show_madlib_form():
     answer = request.args.get("yesno")
 
-    if answer == 'No':
+    if answer == 'no':
         return render_template("goodbye.html")
     else:
         return render_template("game.html")
 
+@app.route('/madlib')
+def show_madlib():
+    name = request.args.get("person")
+    color = request.args.get("color")
+    noun = request.args.get("noun")
+    adjective = request.args.get("adjective")
+    return render_template("madlib.html",
+                            name=name,
+                            color=color,
+                            noun=noun,
+                            adjective=adjective)
 
 if __name__ == '__main__':
     # debug=True gives us error messages in the browser and also "reloads" our web app

@@ -30,7 +30,7 @@ def say_hello():
 def greet_person():
     """Greet user."""
 
-    player = request.args.get("person")
+    player = request.args.get("person", 'there')
 
     compliment = choice(AWESOMENESS)
 
@@ -53,11 +53,14 @@ def show_madlib():
     color = request.args.get("color")
     noun = request.args.get("noun")
     adjective = request.args.get("adjective")
+    food = request.args.getlist("food")
+
     return render_template("madlib.html",
                             name=name,
                             color=color,
                             noun=noun,
-                            adjective=adjective)
+                            adjective=adjective,
+                            food=food)
 
 if __name__ == '__main__':
     # debug=True gives us error messages in the browser and also "reloads" our web app

@@ -27,6 +27,7 @@ class Melon(object):
         self.color = color
         self.seedless = seedless
 
+
     def price_str(self):
         """Return price formatted as string $x.xx"""
 

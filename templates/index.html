@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Welcome to Ubermelon{% endblock %}
+
+{% block body %}
+    <h1>Welcome to Ubermelon</h1>
+    <h2>At Ubermelon, we care about our employees</h2> 
+    <h3>(even when they might stab us in the back and eventually leave us to work for our archenemies)</h3>
+    <h4>...Looking at you, Mark</h4>
+    <h2>Do you want to be part of our Ubermelon family?</h2>
+    <form action="/application-form">
+        <div>
+        <input class="button" type="submit" name="yes" value="Yes">
+        <input class="button" type="submit" name="no" value="No">
+        </div>
+    </form>
+{% endblock %}
+
+
+<!-- <!doctype html>
+<html>
+<link rel="stylesheet" href="./static/styles.css">
+<head>
+    <title>Welcome to Ubermelon</title>
+</head>
+<body>
+<h1>Welcome to Ubermelon</h1>
+<h2>At Ubermelon, we care about our employees</h2> 
+<h3>(even when they might stab us in the back and eventually leave us to work for our archenemies)</h3>
+<h4>...Looking at you, Mark</h4>
+<h2>Do you want to be part of our Ubermelon family?</h2>
+<form action="/application-form">
+    <input class="button" type="submit" name="yes" value="Yes">
+    <input class="button" type="submit" name="no" value="No">
+</form>
+</body>
+</html> -->

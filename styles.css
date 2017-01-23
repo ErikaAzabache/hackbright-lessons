@@ -1,0 +1,89 @@
+/* Your styles can go here. */
+
+input {
+    background-color: #FFFF00;
+    width: 60%;
+    padding: 10px 20px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 2px solid blue;
+    border-radius: 2px;
+    text-align: center;
+}
+
+select {
+    width: 60%;
+    padding: 10px 20px;
+    border-radius: 2px;
+    background-color: #FFFF00;
+    text-align: center;
+}
+
+form{
+    text-align: center;
+    padding: 2em;
+}
+
+.button {
+    background-color: #FFFF00;
+    padding: 10px 10px;
+    width: 15%;
+    display: block;  
+    text-align: center;
+    font-size: 16px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+
+h1{
+    font-family: sans-serif;
+    text-align: center;
+    padding: 1em;
+}
+
+h2{
+    font-family: sans-serif;
+    text-align: center;
+}
+
+h3{
+    font-family: serif;
+    font-weight: normal;
+    font-style: italic;
+    text-align: center;
+}
+
+h4{
+    font-family: serif;
+    font-weight: normal;
+    font-style: italic;
+    text-align: center;
+}
+
+#instructions{
+    font-size: 20px;
+    font-family: sans-serif;
+    text-align: center;
+    width: 80%; 
+    border-style:solid; 
+    border-color:#FF0000;
+    border-width: 2px;
+    padding: 1em;
+    margin: auto;
+}
+
+
+#byemessage{
+    text-align: center;
+    padding: 2em;
+    margin: auto;
+}
+
+
+/*to change the words "Last Name" in the form, replace with label_lastname*/
+#lastname{
+   font-weight: bold;
+
+}
+

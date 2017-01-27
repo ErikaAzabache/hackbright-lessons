@@ -52,9 +52,10 @@
 
     var drinksOrdered = [];
 
-     $("#coffee_image").attr("src", "static/coffee_beans.jpg");
+     $("#coffee_image").attr("src", "static/coffee_beans.jpg").fadeOut(2000).fadeIn(2000);
+
     // myImage.addEventListener('click', function () { makeCoffee("brew"); });
-     $("#coffee_image").on("click", function () {makeCoffee("brew");});
+     $("#coffee_image").on("mouseenter", function () {makeCoffee("brew");});
 
     // Append the drink_type to drinks_ordered and use console.log to view the output
 
@@ -64,9 +65,9 @@
 
         $("#revenue").html("Today's revenues: " + revenue());
        // myRevenueMessage.innerHTML = 
-        $("#coffee_image").attr('src', "static/coffee_machine.jpg");
-        setTimeout(function () { $("#coffee_image").attr('src', "static/coffee_mug.jpg"); }, 1500);
-        setTimeout(function () { $("#coffee_image").attr('src', "static/coffee_beans.jpg"); }, 4000);
+        $("#coffee_image").attr('src', "static/coffee_machine.jpg").fadeToggle().fadeToggle();
+        setTimeout(function () { $("#coffee_image").attr('src', "static/coffee_mug.jpg").fadeOut().fadeIn(); }, 2500);
+        setTimeout(function () { $("#coffee_image").attr('src', "static/coffee_beans.jpg").fadeIn().FadeOut(); }, 4000);
 
     }
     // function makeCoffee(drinkType) {

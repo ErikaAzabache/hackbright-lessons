@@ -1,0 +1,47 @@
+Runtime:
+A1: 
+	The workload will be determined by the effort of grabing every cracker and check if the cracker is an elephant for all crackers in the box, worst case scenario.
+
+A2:
+	O(1)
+	O(log n)
+	O(n)
+	O(nlogn)
+	O(n^2)
+	O(2^n)
+
+--------------------------------------------------------------------------------------------------
+Stacks and Queues:
+A1: 
+	1. Stack (the last you put in is the first you're getting out of the truck)
+	2. Queue (they line up)
+	3. Stack (first inner expressions, then outer, not FIFO)
+A2: 
+	1. An assembly line (where the previous step depends on the previous one)
+	2. Instruction pipelining 
+A3: 
+	1. Undo/previous page/back buttons
+	2. Syntax checking in programming languages.
+
+--------------------------------------------------------------------------------------------------
+Linked Lists: 
+A1: 
+	Nodes: Boxes (apple box, berry box, cherry box)
+	Data: string in boxes ("Apple" is the data for the node represented by the box containing the word "Apple" and so on)
+	Head: The head of this linked list is pointing at the node represented by the box containing the word "Apple"
+	Tail: The tail of this linked list is pointing at the node represented by the box containing the word "Cherry"
+A2: 
+	Singly-linked lists only have nodes with a "next" so they can only be traversed in one way direction, while doubly-linked lists have nodes with a "next" and a "previous" so they can be traversed in two directions.
+A3: 
+	Because if we don't keep track of the tail, then we have to traverse the entire list to append, which is an O(n) operation. By having the tail, we don't need to, so it becomes an O(1) operation.
+
+--------------------------------------------------------------------------------------------------
+Trees:
+A1:
+	food -> Italian -> Indian -> Mexican -> lasagna -> pizza -> tikka masala -> saag -> burritos
+A2:
+	food -> Mexican -> enchiladas -> tacos -> burritos -> Indian -> saag -> tikka masala -> Italian -> pizza -> Sicilian -> New York-style Chicago-style
+A3: As opposed to other trees, a binary search tree is built having a "rule for arragment" (i.e., left-side node has a higher value than the right-side node, for two nodes with the same parent). This makes searching faster than in other trees because every time the value to be found is compared to the value of a certain node, it rules out half of the possibilities. 
+
+
+

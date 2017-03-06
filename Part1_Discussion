@@ -1,0 +1,37 @@
+Recursion
+1. It's a programming technique in which a function is defined by calling itself.
+2. A base case is necessary to establish an end condition to the recursive function, otherwise it would (theoretically) call itself indefinitely.
+
+Graph
+1. It's a data structure that can be used to represent relationships between elements
+
+2. It doesn't necessarily establish a hierarchical relationship, which is the 
+case with trees. Because trees are hierarchical, they don't have cycles, while graphs do.
+
+3. Flow diagrams, state diagrams, etc can be represented as graphs.
+------------------------------------------------------------------------------------------------------------------------------------
+Data Structure					Index	Search	Add-R	Add-L	Pop-L	Pop-R
+Python List (Array)				O(1)	O(n)	O(1)	O(n)	O(n)	O(1)	 	 
+Linked List	 	 				O(n)	O(n)	O(1)	O(1) 	O(1)	O(n) 	 	 
+Doubly-Linked List				O(n) 	O(n) 	O(1)	O(1)	O(1)	O(1)	 	 	 	 
+Queue (as Array)				X		X	 	O(1)	X	 	O(n)	X
+Queue (as LL or DLL)			X		X	 	O(1)	X	 	O(1)	X
+Stack (as Array, LL, or DLL)	X		X	 	O(1)	X		X	 	O(1)
+Deque (as DLL)					X		X	 	O(1)	O(1)	O(1)	O(1) 	 	
+
+
+Data Structure					Get		Add		Delete	Iterate	Memory
+Dictionary (Hash Map)			O(1)	O(1)	O(1)	O(n)	medium
+Set (Hash Map)	 	 	 	 	O(1)	O(1)	O(1)	O(n)	medium 
+Binary Search Tree	 	 	 	O(logn)	O(logn)	O(logn)	O(n)	little 	 
+Tree	 	 	 	 	 		O(n)	O(1)	O(1)	O(n)	little
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+Sorting
+1. Buble sort is an O(n^2) algorithm that checks the first and second elements of the list at a time, if they are not ordered, they swap, and then the second and third elements, and so on. This process happens n times (n being the lenght of the list), worst case scenario.
+
+2. Merge sort uses the idea that we can create an ordered list from two sorted lists. Or, from a list, we can create two lists over and over until they become a list of one, which is technically an ordered list. So we use recursion to divide the list in halves until we get a list of one, and then we put both halves together and in order.
+
+3. Quick sort uses a pivot value chosen from the list to be sorted to compare it against each element. The elements are moved to the left or right side of the pivot depending on whether they are higher or lower. The same procedure is done to the higher and lower (than the original pivot) sublists with new pivots, and so on until the elements are ordered.
+

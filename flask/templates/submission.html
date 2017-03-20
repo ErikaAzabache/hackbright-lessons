@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Form successfully submitted{% endblock %}
+
+{% block body %}
+    <h2 id="byemessage">
+    Thank you, {{ firstname }} {{ lastname }} for applying to be a {{ position }}. <br>
+    Your minimum salary requirement is {{ "${:,.2f}".format(salary|int) }}.
+    </h2>
+{% endblock %}
+
+<!-- <!doctype html>
+<html>
+<link rel="stylesheet" href="./static/styles.css">
+<body>
+    <p>
+    Thank you, {{ firstname }} {{ lastname }} for applying to be a {{ position }}. Your minimum salary requirement is {{ "${:,.2f}".format(salary|int) }}.
+    </p>
+</body>
+</html> -->

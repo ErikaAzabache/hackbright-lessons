@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<link rel="stylesheet" href="./static/madlibs.css">
+<head>
+  <title>The Game</title>
+</head>
+<body>
+    We need some information from you:
+    <form action="/madlib">
+        Name: <input type="text" name="person"><br>
+        Pick a color: 
+            <select name="color">
+                <option value="red">Red</option>
+                <option value="orange">Orange</option>
+                <option value="yellow">Yellow</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+            </select><br>
+        Enter a Noun: <input type="text" name="noun"><br>
+        Choose an Adjective <input type="text" name="adjective"><br>
+        Choose a food:
+            <input type="checkbox" name="food" value="pizza">pizza
+            <input type="checkbox" name="food" value="icecream">icecream
+            <input type="checkbox" name="food" value="hamburger">hamburger
+            <input type="checkbox" name="food" value="pie">pie
+            <input type="checkbox" name="food" value="beer">beer
+        <input type="submit">
+    </form>
+</body>
+</html>
